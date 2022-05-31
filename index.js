@@ -14,13 +14,13 @@ const puppeteer = require("puppeteer");
     await page.goto("https://web.whatsapp.com/");
 
     // //Searches person by title
-    await page.waitForSelector("._1hI5g"); //Add selector by the css class who was identified by html code
-    await delay(5000);
+    await page.waitForSelector(".zoWT4"); //Add selector by the css class who was identified by html code
+    await delay(7000);
 
     //Change to contact you want to send messages to
-    const contactName = "Monsieur Amancio";
+    const contactName = "gatchuniks";
     await page.click(`span[title='${contactName}']`);
-    await page.waitForSelector("._1C6Zl"); //Add selector by the css class who was identified by html code
+    await page.waitForSelector(".zoWT4"); //Add selector by the css class who was identified by html code
 
     //Finds the message bar and focuses on it
     const editor = await page.$("div[data-tab='6']"); //Add message bar by the css class who was identified by html code
@@ -31,7 +31,7 @@ const puppeteer = require("puppeteer");
     //Loops through cycle of sending message
     for (var i = 0; i < amountOfMessages; i++) {
       await page.evaluate(() => {
-        const message = "melhor pessoa em linha reta";
+        const message = "OLHA AI O TRAVAZAP PASSANDO FREGUESA";
         document.execCommand("insertText", false, message);
       });
       await page.click("span[data-testid='send']"); //Add send message button by the css class who was identified by html code
